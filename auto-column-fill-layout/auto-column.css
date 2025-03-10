@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+h1 {
+	background-color: red;
+	color: white;
+}
+.container {
+	column-count: 2;
+	/* 칼럼 수 설정 */
+	column-gap: 20px;
+	/* 칼럼 간격 설정 */
+	column-fill: auto;
+	/* 콘텐츠가 세로로 채워지며 칼럼을 넘길 수 있게 설정 */
+}
+
+.container p {
+	break-inside: avoid;
+	margin: 0 2rem 4rem;
+	/* 각 콘텐츠 간의 간격 */
+
+	border: solid 1px red;
+	padding: 20px 10px;
+}
