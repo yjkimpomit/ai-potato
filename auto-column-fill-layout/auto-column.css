@@ -1,23 +1,83 @@
 @charset "UTF-8";
 
+body {
+	font-family: "Noto Sans KR", sans-serif;
+	word-break: keep-all;
+}
+
 h1 {
-	background-color: red;
 	color: white;
 }
-.container {
-	column-count: 2;
-	/* 칼럼 수 설정 */
-	column-gap: 20px;
-	/* 칼럼 간격 설정 */
-	column-fill: auto;
-	/* 콘텐츠가 세로로 채워지며 칼럼을 넘길 수 있게 설정 */
+
+h3 {
+	font-weight: 700;
 }
 
-.container p {
+.title-box {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	background-color: red;
+	margin-bottom: 3rem;
+	padding: 1rem;
+}
+
+.list {
+	column-count: 3;
+	column-gap: 40px;
+}
+
+.list .item {
 	break-inside: avoid;
-	margin: 0 2rem 4rem;
+
+	margin: 0 auto 4rem;
 	/* 각 콘텐츠 간의 간격 */
 
-	border: solid 1px red;
-	padding: 20px 10px;
+	border: solid 8px #FF000020;
+	border-radius: 8px;
+	padding: 24px;
+
+	box-shadow: 0 0 8px rgba(125, 0, 20, 0.3);
+}
+
+@media print {
+
+	/* 페이지 여백 설정 */
+	@page {
+		padding: 40px 20px 80px;
+	}
+
+	body {
+		font-size: 12px;
+		/* 인쇄 시 글자 크기 설정 */
+		background: gray;
+	}
+
+	h3 {
+		font-size: 18px;
+	}
+
+	.list {
+		background: yellow;
+		column-count: 2;
+		/* 인쇄 시에도 2칼럼으로 유지 */
+		column-gap: 40px;
+		/* 칼럼 간 간격 유지 */
+		column-fill: auto;
+		/* 콘텐츠가 세로로 채워지며 칼럼을 넘길 수 있게 설정 */
+		padding: 0;
+		/* 인쇄 시 여백 없애기 */
+	}
+	.list .item {
+		margin: 0 0 3rem;
+		/* 각 콘텐츠 간의 간격 */
+		padding: 20px;
+		box-shadow: none;
+	}
+
+	/* 페이지 브레이크
+	.page-break {
+		break-before: always;
+	} */
 }
