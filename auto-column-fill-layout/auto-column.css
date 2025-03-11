@@ -1,5 +1,17 @@
 @charset "UTF-8";
 
+/* 콘텐츠가 세로로 채워지며 칼럼을 넘길 수 있게 설정
+
+.container {
+	column-count: 2;
+	column-gap: 20px;
+	column-fill: auto;
+}
+.container p {
+	break-inside: avoid;
+}
+*/
+
 body {
 	font-family: "Noto Sans KR", sans-serif;
 	word-break: keep-all;
